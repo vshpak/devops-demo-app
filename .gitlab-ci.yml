@@ -1,0 +1,8 @@
+stages:
+  - test
+
+hello-ci:
+  image: alpine
+  stage: test
+  script:
+    - echo "Hello, lovely GitLab CI :)"
