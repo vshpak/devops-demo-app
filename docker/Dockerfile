@@ -1,10 +1,12 @@
 FROM ubuntu:20.04
 
-RUN apt-get update
-RUN apt-get install -y nginx
+RUN apt-get update && \
+    apt-get install -y nginx && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-ADD docker nginx.conf /etc/nginx/nginx.conf
-#ADD ./www /www
+ADD docker/nginx.conf /etc/nginx/nginx.conf
+ADD ./www /www
 
 EXPOSE 80
 CMD ["nginx"]
