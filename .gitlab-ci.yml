@@ -5,4 +5,4 @@ hello-ci:
   image: alpine
   stage: test
   script:
-    - echo "Hello, lovely GitLab CI :)"
+    - echo "Hello, GitLab CI"
