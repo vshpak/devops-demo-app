@@ -29,3 +29,10 @@ services:
     networks:
       consul_network:
         ipv4_address: 33.10.0.100
+
+networks:
+  consul_network:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 33.10.0.0/16
