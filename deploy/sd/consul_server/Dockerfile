@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 RUN apt update && \
     apt install -y --no-install-recommends \
     bash curl nano net-tools zip unzip \
-    jq dnsutils iputils-ping \
+    jq dnsutils iputils-ping && \
     apt clean && \
     rm -rf /var/lib/apt/lists
 
