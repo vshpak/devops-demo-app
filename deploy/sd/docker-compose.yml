@@ -1,0 +1,21 @@
+version: "3.6"
+
+services:
+
+  consul_server:
+    build:
+      context: consul_server
+      dockerfile: Dockerfile
+    image: consul_server
+    ports:
+      - 8300:8300
+      - 8301:8301
+      - 8302:8302
+      - 8400:8400
+      - 8500:8500
+    environment:
+      - NODE=consul_server
+      - PRIVATE_IP_ADDRESS=33.10.0.2
+    networks:
+      consul_network:
+        ipv4_address: 33.10.0.2
