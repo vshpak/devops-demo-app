@@ -30,6 +30,30 @@ services:
       consul_network:
         ipv4_address: 33.10.0.100
 
+  web_1:
+    build:
+      context: web
+      dockerfile: Dockerfile
+    image: web_consul
+    ports:
+      - 8080:80
+    environment:
+      - NODE=web_1
+      - LOAD_BALANCER=33.10.0.100
+      - PRIVATE_IP_ADDRESS=33.10.0.11
+    dns:
+      - 127.0.0.1
+      - 8.8.8.8
+      - 8.8.4.4
+    depends_on:
+      - consul_server
+      - load_balancer
+    cap_add:
+      - NET_ADMIN
+    networks:
+      consul_network:
+        ipv4_address: 33.10.0.11
+
 networks:
   consul_network:
     driver: bridge
