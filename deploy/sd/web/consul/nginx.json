@@ -5,7 +5,7 @@
         "tags": [
             "web",
             "application",
-            "urlprefix-/web"
+            "urlprefix-/"
         ],
         "check": {
             "id": "web_app_status",
