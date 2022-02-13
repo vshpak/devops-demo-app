@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sed -i -e 's/WEB_NODE/'"$NODE"'/g' /var/www/html/index.html
+sed -i -e 's/IP_ADDRESS/'"$PRIVATE_IP_ADDRESS"'/g' /var/www/html/index.html
 
 echo "Starting Nginx..."
 nginx -g 'daemon off;' &
