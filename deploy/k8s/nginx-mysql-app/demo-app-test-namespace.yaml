@@ -1,0 +1,7 @@
+# staging-namespace.yaml
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: demo-app-test
+  labels:
+    name: demo-app-test
