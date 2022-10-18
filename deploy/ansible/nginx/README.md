@@ -16,7 +16,9 @@ For example:
 ```
 
 Where:
+
 `[apps]` - group name of target system(s);
+
 `158.140.12.161` - IP address of target system(s).
 
 Also need to keep in mind that Ansible will use OS setting to establish connection to a terget system. So, if you have some custom/specific setting - you should aware about that and use additional Ansible parameters to set up that accordingly.
@@ -45,7 +47,11 @@ ansible all -m shell -a 'sudo apt install -y nginx'
 ```
 
 Where:
+
 `all` - directive which points to execute requested actions for all systems;
+
 `-m shell` - directive which points to use `shell` module of Ansible (all actions on target(s) will be executed in shell)
+
 `-a ` - directive which provides additional argument for modue, i.e. required shell command(s);
+
 `sudo apt install -y nginx` - actual commad(s) which will be executed on target(s).
