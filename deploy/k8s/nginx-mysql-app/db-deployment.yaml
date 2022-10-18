@@ -1,0 +1,33 @@
+# db-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app-db
+  namespace: demo-app-test
+spec:
+  selector:
+    matchLabels:
+      app: demo-app-db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demo-app-db
+    spec:
+      containers:
+        - name: demo-app-db
+          image: postgres:13
+          ports:
+            - containerPort: 5432
+              name: "postgres"
+          env:
+            - name: POSTGRES_DB
+              value: demo_app_db
+            - name: POSTGRES_USER
+              value: demoapp
+            - name: POSTGRES_PASSWORD
+              value: demo1app2
+          resources:
+            limits:
+              memory: 4Gi
+              cpu: "2"
